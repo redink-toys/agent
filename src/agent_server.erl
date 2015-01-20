@@ -19,7 +19,7 @@
          terminate/2, code_change/3]).
 
 -define(SERVER, ?MODULE).
--define(HIBERNATE_TIMEOUT, 10000).
+-define(HIBERNATE_TIMEOUT, hibernate).
 
 %%%===================================================================
 %%% API
@@ -81,7 +81,7 @@ handle_call({update, Fun}, _From, State) ->
     {reply, ok, run(Fun, [State]), ?HIBERNATE_TIMEOUT};
 
 handle_call(stop, _From, State) ->
-    {stop, normal, ok, State, ?HIBERNATE_TIMEOUT};
+    {stop, normal, ok, State};
 
 handle_call(_Request, _From, State) ->
     {reply, unsupport, State, ?HIBERNATE_TIMEOUT}.
@@ -114,7 +114,7 @@ handle_cast(_Msg, State) ->
 %%--------------------------------------------------------------------
 handle_info(timeout, State) ->
     proc_lib:hibernate(gen_server, enter_loop,
-               [?MODULE, [], State]),
+                       [?MODULE, [], State]),
     {noreply, State, ?HIBERNATE_TIMEOUT};
 
 handle_info(_Info, State) ->
