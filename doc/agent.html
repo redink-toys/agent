@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module agent</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module agent</h1>
+<ul class="index"><li><a href="#types">Data Types</a></li><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>
+<p>Copyright © (C) 2015 , redink
+  
+  
+  
+   Created :  by redink
+  -------------------------------------------------------------------</p>
+
+<p><b>Authors:</b> redink.</p>
+
+<h2><a name="types">Data Types</a></h2>
+
+<h3 class="typedecl"><a name="type-debug_option">debug_option()</a></h3>
+<p><tt>debug_option() = [trace | log | statistics | {log_to_file, string()} | {install, {function(), term()}}]</tt></p>
+
+
+<h3 class="typedecl"><a name="type-spawn_option">spawn_option()</a></h3>
+<p><tt>spawn_option() = [term()]</tt></p>
+
+
+<h3 class="typedecl"><a name="type-start_option">start_option()</a></h3>
+<p><tt>start_option() = {debug, <a href="#type-debug_option">debug_option()</a>} | {timeout, timeout()} | {spawn_opt, <a href="#type-spawn_option">spawn_option()</a>}</tt></p>
+
+
+<h3 class="typedecl"><a name="type-start_options">start_options()</a></h3>
+<p><tt>start_options() = [<a href="#type-start_option">start_option()</a>]</tt></p>
+
+
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#cast-2">cast/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#cast-4">cast/4</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get-2">get/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get-3">get/3</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get-4">get/4</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get-5">get/5</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get_and_update-2">get_and_update/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get_and_update-3">get_and_update/3</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get_and_update-4">get_and_update/4</a></td><td></td></tr>
+<tr><td valign="top"><a href="#get_and_update-5">get_and_update/5</a></td><td></td></tr>
+<tr><td valign="top"><a href="#start-1">start/1</a></td><td></td></tr>
+<tr><td valign="top"><a href="#start-2">start/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#start-3">start/3</a></td><td></td></tr>
+<tr><td valign="top"><a href="#start-4">start/4</a></td><td></td></tr>
+<tr><td valign="top"><a href="#start_link-1">start_link/1</a></td><td></td></tr>
+<tr><td valign="top"><a href="#start_link-2">start_link/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#start_link-3">start_link/3</a></td><td></td></tr>
+<tr><td valign="top"><a href="#start_link-4">start_link/4</a></td><td></td></tr>
+<tr><td valign="top"><a href="#stop-1">stop/1</a></td><td></td></tr>
+<tr><td valign="top"><a href="#stop-2">stop/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#update-2">update/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#update-3">update/3</a></td><td></td></tr>
+<tr><td valign="top"><a href="#update-4">update/4</a></td><td></td></tr>
+<tr><td valign="top"><a href="#update-5">update/5</a></td><td></td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="cast-2">cast/2</a></h3>
+<div class="spec">
+<p><tt>cast(Agent::pid(), Fun::function()) -&gt; ok</tt><br></p>
+</div>
+
+<h3 class="function"><a name="cast-4">cast/4</a></h3>
+<div class="spec">
+<p><tt>cast(Agent::pid(), Module::atom(), Fun::atom(), Args::[term()]) -&gt; ok</tt><br></p>
+</div>
+
+<h3 class="function"><a name="get-2">get/2</a></h3>
+<div class="spec">
+<p><tt>get(Agent::pid(), Fun::function()) -&gt; term()</tt><br></p>
+</div>
+
+<h3 class="function"><a name="get-3">get/3</a></h3>
+<div class="spec">
+<p><tt>get(Agent::pid(), Fun::function(), TimeOut::timeout()) -&gt; term()</tt><br></p>
+</div>
+
+<h3 class="function"><a name="get-4">get/4</a></h3>
+<div class="spec">
+<p><tt>get(Agent::pid(), Module::atom(), Fun::atom(), Args::[term()]) -&gt; term()</tt><br></p>
+</div>
+
+<h3 class="function"><a name="get-5">get/5</a></h3>
+<div class="spec">
+<p><tt>get(Agent::pid(), Module::atom(), Fun::atom(), Args::[term()], TimeOut::timeout()) -&gt; term()</tt><br></p>
+</div>
+
+<h3 class="function"><a name="get_and_update-2">get_and_update/2</a></h3>
+<div class="spec">
+<p><tt>get_and_update(Agent::pid(), Fun::function()) -&gt; term()</tt><br></p>
+</div>
+
+<h3 class="function"><a name="get_and_update-3">get_and_update/3</a></h3>
+<div class="spec">
+<p><tt>get_and_update(Agent::pid(), Fun::function(), TimeOut::timeout()) -&gt; term()</tt><br></p>
+</div>
+
+<h3 class="function"><a name="get_and_update-4">get_and_update/4</a></h3>
+<div class="spec">
+<p><tt>get_and_update(Agent::pid(), Module::atom(), Fun::atom(), Args::[term()]) -&gt; term()</tt><br></p>
+</div>
+
+<h3 class="function"><a name="get_and_update-5">get_and_update/5</a></h3>
+<div class="spec">
+<p><tt>get_and_update(Agent::pid(), Module::atom(), Fun::atom(), Args::[term()], TimeOut::timeout()) -&gt; term()</tt><br></p>
+</div>
+
+<h3 class="function"><a name="start-1">start/1</a></h3>
+<div class="spec">
+<p><tt>start(Fun::function()) -&gt; {ok, pid()}</tt><br></p>
+</div>
+
+<h3 class="function"><a name="start-2">start/2</a></h3>
+<div class="spec">
+<p><tt>start(Fun::function(), Option::<a href="#type-start_options">start_options()</a>) -&gt; {ok, pid()}</tt><br></p>
+</div>
+
+<h3 class="function"><a name="start-3">start/3</a></h3>
+<div class="spec">
+<p><tt>start(Module::atom(), Fun::atom(), Args::[term()]) -&gt; {ok, pid()}</tt><br></p>
+</div>
+
+<h3 class="function"><a name="start-4">start/4</a></h3>
+<div class="spec">
+<p><tt>start(Module::atom(), Fun::atom(), Args::[term()], Option::<a href="#type-start_options">start_options()</a>) -&gt; {ok, pid()}</tt><br></p>
+</div>
+
+<h3 class="function"><a name="start_link-1">start_link/1</a></h3>
+<div class="spec">
+<p><tt>start_link(Fun::function()) -&gt; {ok, pid()}</tt><br></p>
+</div>
+
+<h3 class="function"><a name="start_link-2">start_link/2</a></h3>
+<div class="spec">
+<p><tt>start_link(Fun::function(), Option::<a href="#type-start_options">start_options()</a>) -&gt; {ok, pid()}</tt><br></p>
+</div>
+
+<h3 class="function"><a name="start_link-3">start_link/3</a></h3>
+<div class="spec">
+<p><tt>start_link(Module::atom(), Fun::atom(), Args::[term()]) -&gt; {ok, pid()}</tt><br></p>
+</div>
+
+<h3 class="function"><a name="start_link-4">start_link/4</a></h3>
+<div class="spec">
+<p><tt>start_link(Module::atom(), Fun::atom(), Args::[term()], Option::<a href="#type-start_options">start_options()</a>) -&gt; {ok, pid()}</tt><br></p>
+</div>
+
+<h3 class="function"><a name="stop-1">stop/1</a></h3>
+<div class="spec">
+<p><tt>stop(Agent::pid()) -&gt; ok</tt><br></p>
+</div>
+
+<h3 class="function"><a name="stop-2">stop/2</a></h3>
+<div class="spec">
+<p><tt>stop(Agent::pid(), TimeOut::timeout()) -&gt; ok</tt><br></p>
+</div>
+
+<h3 class="function"><a name="update-2">update/2</a></h3>
+<div class="spec">
+<p><tt>update(Agent::pid(), Fun::function()) -&gt; ok</tt><br></p>
+</div>
+
+<h3 class="function"><a name="update-3">update/3</a></h3>
+<div class="spec">
+<p><tt>update(Agent::pid(), Fun::function(), TimeOut::timeout()) -&gt; ok</tt><br></p>
+</div>
+
+<h3 class="function"><a name="update-4">update/4</a></h3>
+<div class="spec">
+<p><tt>update(Agent::pid(), Module::atom(), Fun::atom(), Args::[term()]) -&gt; ok</tt><br></p>
+</div>
+
+<h3 class="function"><a name="update-5">update/5</a></h3>
+<div class="spec">
+<p><tt>update(Agent::pid(), Module::atom(), Fun::atom(), Args::[term()], TimeOut::timeout()) -&gt; ok</tt><br></p>
+</div>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Jan 22 2015, 16:46:35.</i></p>
+</body>
+</html>

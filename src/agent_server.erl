@@ -1,6 +1,6 @@
 %%%-------------------------------------------------------------------
 %%% @author redink
-%%% @copyright (C) , redink
+%%% @copyright (C) 2015 , redink
 %%% @doc
 %%%
 %%% @end
@@ -29,7 +29,7 @@
 %% @doc
 %% Starts the server
 %%
-%% @spec start_link() -> {ok, Pid} | ignore | {error, Error}
+%% -spec start_link() -> {ok, Pid} | ignore | {error, Error}
 %% @end
 %%--------------------------------------------------------------------
 start(StartInit, StartOption) ->
